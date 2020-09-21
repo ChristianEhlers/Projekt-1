@@ -1,5 +1,6 @@
+let dice = [1, 2, 3, 4, 5, 6];
 function kast(){
-    var terning1 = document.getElementById("terning1");
+   /* var terning1 = document.getElementById("terning1");
     var terning2 = document.getElementById("terning2");
     var terning3 = document.getElementById("terning3");
     var terning4 = document.getElementById("terning4");
@@ -14,4 +15,17 @@ function kast(){
     terning3.innerHTML = t3;
     terning4.innerHTML = t4;
     terning5.innerHTML = t5;
+	*/
+	for (let i = 0; i < 5; i++){
+	document.getElementById('terning' + '<br>');
+	terning.innerHTML = test();
+	}
 }
+
+function test(){
+	dice = Math.random();
+    dice = Math.floor(dice * 6 + 1);
+    return dice;
+	}
+
+//document.getElementById("kast").addEventListener('click', kast);
