@@ -44,3 +44,36 @@ function checkGuess() {
     guessField.focus();
 }
 
+// Tilføj eventListener til Submit knappen
+guessSubmit.addEventListener('click', checkGuess);
+
+//Tilføj GameOver funktionen ved korrekt gæt eller brug af 10 forsøg
+function setGameOver() {
+    guessField.disabled = true;
+    guessSubmit.disabled = true;
+    resetButton = document.createElement('button');
+    resetButton.textContent = 'Start new game';
+    document.body.append('resetButton');
+    resetButton.addEventListener('click', resetGame);
+}
+
+//funktion til at nulstille spillet
+function resetGame() {
+    guessCount = 1;
+
+    const resetParas = document.querySelectorAll('.resultParas p');
+    for (let i = 0; i < resetParas.length; i++) {
+        resetParas[i].textContent = '';
+    }
+
+    resetButton.parentNode.removeChild(resetButton);
+
+    guessField.disabled = false;
+    guessSubmit.disabled = false;
+    guessField.value = '';
+    guessField.focus();
+
+    lastResult.style.backgroundColor = 'white';
+
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+}
