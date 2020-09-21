@@ -17,9 +17,18 @@ function kast(){
     terning5.innerHTML = t5;
 	*/
 	for (let i = 0; i < 5; i++){
-	document.getElementById('terning' + '<br>');
+	/*document.getElementById('terning' + '<br>');
 	terning.innerHTML = test();
-	}
+    }*/
+    var div = document.getElementById("terning");
+   var br = document.createElement("br");
+   var input = document.createElement("INPUT");
+input.setAttribute("type", "checkbox");
+   var print = document.createTextNode(test());
+       div.appendChild(print);
+       div.appendChild(input)
+       div.appendChild(br);
+  
 }
 
 function test(){
@@ -28,4 +37,4 @@ function test(){
     return dice;
 	}
 
-//document.getElementById("kast").addEventListener('click', kast);
+console.log("hello")
