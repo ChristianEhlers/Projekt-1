@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+table{
+	border-color: black;
+	border-style: solid;
+	padding: 5px;
+}
+
+th{
+	border-color: dimgray;
+	border-style: solid;
+	padding: 5px;
+}
+
+td{
+	border-color: dimgray;
+	border-style: solid;
+	padding: 5px;
+}
+
+.bold{
+	font-weight: bold;
+}
