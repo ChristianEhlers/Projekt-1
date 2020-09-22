@@ -26,6 +26,3 @@ function test(){
     return dice;
 
 	}
-
-console.log("hello");
-
