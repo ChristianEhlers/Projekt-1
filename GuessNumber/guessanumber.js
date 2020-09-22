@@ -13,10 +13,13 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1;
 let resetButton;
+guessField.focus();
 
 // funktion til at tjekke om en spillers gæt er korrekt eller ej.
 function checkGuess() {
     let userGuess = Number(guessField.value);
+    //userGuess.setAttribute('min', '0');
+    //userGuess.setAttribute('max', '1000');
     if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
     }
@@ -53,7 +56,7 @@ function setGameOver() {
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
-    document.body.append('resetButton');
+    document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
 
