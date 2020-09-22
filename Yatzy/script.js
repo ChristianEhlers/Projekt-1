@@ -30,7 +30,6 @@ input.setAttribute("type", "checkbox");
        div.appendChild(br);
 }
 }
-}
 
 function test(){
 	dice = Math.random();
