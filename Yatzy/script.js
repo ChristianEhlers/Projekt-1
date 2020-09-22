@@ -28,7 +28,7 @@ input.setAttribute("type", "checkbox");
        div.appendChild(print);
        div.appendChild(input)
        div.appendChild(br);
-  
+}
 }
 
 function test(){
@@ -37,4 +37,4 @@ function test(){
     return dice;
 	}
 
-console.log("hello")
+console.log("hello");
