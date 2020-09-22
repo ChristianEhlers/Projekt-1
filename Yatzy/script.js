@@ -50,26 +50,3 @@ let rolls = 0;
 function numOfRolls(){
 
 }
-/*
-var count = 0;
-function clickFunc() {
-  count += 1;
-  var click = document.getElementById('clicks').innerHTML = count;
-  var btn = document.querySelector('.btn');
-  if(count >= 3) { // placed inside the click function
-    btn.disabled = true;
-  }
-}
-/*
-function numOfRolls(){
-	if(rolls === 6){
-		window.alert("hej")
-	}
-}
-
-
-numOfRolls();
-numOfRolls();
-numOfRolls();
-
-*/
