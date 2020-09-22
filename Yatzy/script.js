@@ -24,4 +24,8 @@ function test(){
 	dice = Math.random();
     dice = Math.floor(dice * 6 + 1);
     return dice;
+
 	}
+
+console.log("hello");
+
