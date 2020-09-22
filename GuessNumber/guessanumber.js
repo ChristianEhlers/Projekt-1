@@ -21,12 +21,12 @@ function checkGuess() {
     //userGuess.setAttribute('min', '0');
     //userGuess.setAttribute('max', '1000');
     if (guessCount === 1) {
-        guesses.textContent = 'Previous guesses: ';
+        guesses.textContent = 'Forrige gæt: ';
     }
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
-        lastResult.textContent = 'Congratulations! You got it right!';
+        lastResult.textContent = 'Tillykke! Du gættede rigtigt!';
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         setGameOver();
@@ -34,12 +34,12 @@ function checkGuess() {
         lastResult.textContent = 'GAME OVER!';
         setGameOver();
     } else {
-        lastResult.textContent = 'Wrong!';
+        lastResult.textContent = 'Forkert!';
         lastResult.style.backgroundColor = 'red';
         if(userGuess < randomNumber) {
-            lowOrHi.textContent = 'Last guess was too low!';
+            lowOrHi.textContent = 'Det sidste gæt var for lavt!';
         } else if (userGuess > randomNumber) {
-            lowOrHi.textContent = 'Last Guess was too high!';
+            lowOrHi.textContent = 'Det sidste gæt var for højt!';
         }
     }
     guessCount++;
@@ -55,7 +55,7 @@ function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
-    resetButton.textContent = 'Start new game';
+    resetButton.textContent = 'Start et nyt spil';
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
