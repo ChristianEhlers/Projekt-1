@@ -28,7 +28,7 @@ input.setAttribute("type", "checkbox");
        div.appendChild(print);
        div.appendChild(input)
        div.appendChild(br);
-  
+}
 }
 }
 
