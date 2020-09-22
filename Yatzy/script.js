@@ -1,22 +1,12 @@
 let dice = [1, 2, 3, 4, 5, 6];
+arr1 = [0,0,0,0,0];
+locked = [false,false,false,false,false];
+
 function kast(){
-   /* var terning1 = document.getElementById("terning1");
-    var terning2 = document.getElementById("terning2");
-    var terning3 = document.getElementById("terning3");
-    var terning4 = document.getElementById("terning4");
-    var terning5 = document.getElementById("terning5");
-    var t1 = Math.floor(Math.random() * 6) + 1;
-    var t2 = Math.floor(Math.random() * 6) + 1;
-    var t3 = Math.floor(Math.random() * 6) + 1;
-    var t4 = Math.floor(Math.random() * 6) + 1;
-    var t5 = Math.floor(Math.random() * 6) + 1;
-    terning1.innerHTML = t1;
-    terning2.innerHTML = t2;
-    terning3.innerHTML = t3;
-    terning4.innerHTML = t4;
-    terning5.innerHTML = t5;
-	*/
+    document.getElementById("terning").innerHTML = '';
+	
 	for (let i = 0; i < 5; i++){
+<<<<<<< HEAD
 	/*document.getElementById('terning' + '<br>');
 	terning.innerHTML = test();
     }*/
@@ -29,12 +19,28 @@ input.setAttribute("type", "checkbox");
        div.appendChild(input)
        div.appendChild(br);
 }
+=======
+    	var div = document.getElementById("terning");
+   		var br = document.createElement("br");
+   		var input = document.createElement("INPUT");
+		input.setAttribute("type", "checkbox");
+		let udfald = test();
+		var print = document.createTextNode(udfald);
+		if(!locked[i])
+			arr1[udfald]++;
+    	div.appendChild(print);
+    	div.appendChild(input)
+    	div.appendChild(br);
+	}
+>>>>>>> 0cca5294b2e8c7787d61bd731a8b0922a42aaa40
 }
 
 function test(){
 	dice = Math.random();
     dice = Math.floor(dice * 6 + 1);
     return dice;
-}
+
+	}
 
 console.log("hello");
+
