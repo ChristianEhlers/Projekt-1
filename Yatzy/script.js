@@ -7,6 +7,12 @@ locked = [false,false,false,false,false];
 
 //function to throw dice, clear dices and "rebuild" the dices again for the second and third throw
 function kast(){
+	rolls += 1;
+	var click = document.getElementById("terning").innerHTML = rolls;
+	var kastterning = document.getElementById("kastterning");
+	if(rolls >= 3){
+		kastterning.disabled = true;
+	} 
 	//when the function is run, create an empty id
     document.getElementById("terning").innerHTML = '';
 	
@@ -19,7 +25,7 @@ function kast(){
 		input.addEventListener('click', function(){
 			locked[i] = locked[i] ? false : true;
 		});
-		let udfald = test();
+		let udfald = terning();
 		var print = document.createTextNode(udfald);
 		
 		if(!locked[i]){
@@ -35,8 +41,35 @@ function kast(){
 	console.log(locked);
 }
 
-function test(){
+function terning(){
 	dice = Math.random();
     dice = Math.floor(dice * 6 + 1);
     return dice;
 }
+let rolls = 0;
+function numOfRolls(){
+
+}
+/*
+var count = 0;
+function clickFunc() {
+  count += 1;
+  var click = document.getElementById('clicks').innerHTML = count;
+  var btn = document.querySelector('.btn');
+  if(count >= 3) { // placed inside the click function
+    btn.disabled = true;
+  }
+}
+/*
+function numOfRolls(){
+	if(rolls === 6){
+		window.alert("hej")
+	}
+}
+
+
+numOfRolls();
+numOfRolls();
+numOfRolls();
+
+*/
