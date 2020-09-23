@@ -72,3 +72,9 @@ var lsgwoerter = [ "LION", "RHINO", "MONKEY", "HIPPO", "GIRAF", ]
     window.onload = init;
 
     
+   
+    document.addEventListener('click', function (event) {
+        if ( event.target.classList.contains( 'terning' ) ) {
+            console.log("hej")
+        }
+    }, false);
