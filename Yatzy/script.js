@@ -23,8 +23,8 @@ function kast(){
 		var btn = document.createElement("Button");
 		var text = document.createTextNode("lås");
   			btn.appendChild(text); 		
-		btn.classList.add("btn")
-		btn.addEventListener('click', function(){
+			btn.classList.add("btn")
+			btn.addEventListener('click', function(){
 			locked[i] = locked[i] ? false : true;
 			this.style.backgroundColor = "red";
 		
@@ -35,6 +35,7 @@ function kast(){
 		if(!locked[i]){
 			arr1[i] = udfald;
 			print = document.createTextNode(udfald);
+		
 		} else{
 			print = document.createTextNode(arr1[i])
 			btn.style.backgroundColor = "red"
@@ -57,13 +58,101 @@ function terning(){
     return dice;
 }
 
-
-btn = document.getElementsByTagName("button");
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'reset' ) ){
 		document.getElementById("kastterning").disabled = false;
 		rolls = 0; 
-		btn.style.backgroundColor = "green";
-
+		
 	} 
 }) 
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'enere' ) ){
+		console.log("enere")
+	} 
+}) 
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'toere' ) ){
+		console.log("toere")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'treere' ) ){
+		console.log("treere")
+	} 
+})
+
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'fireere' ) ){
+		console.log("fireere")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'femere' ) ){
+		console.log("femere")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'seksere' ) ){
+		console.log("seksere")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'par1' ) ){
+		console.log("1 par")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'par2' ) ){
+		console.log("2 par")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'ens3' ) ){
+		console.log("3 ens")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'ens4' ) ){
+		console.log("4 ens")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'lille' ) ){
+		console.log("lille straight")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'stor' ) ){
+		console.log("stor straight")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'hus' ) ){
+		console.log("hus")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'chance' ) ){
+		console.log("chance")
+	} 
+})
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'yatzy' ) ){
+		console.log("yatzy")
+	} 
+})
