@@ -1,6 +1,6 @@
 //Array to store dice numbers
 let dice = [1, 2, 3, 4, 5, 6];
-
+let magic = [0,0,0,0,0,0,0];
 //arrays to store "eyes" of rolled dices and for checkboxes
 arr1 = [0,0,0,0,0];
 locked = [false,false,false,false,false];
@@ -31,6 +31,7 @@ function kast(){
 		});
 		let udfald = terning();
 		var print = document.createTextNode(udfald);
+		magic[udfald]++;
 		
 		if(!locked[i]){
 			arr1[i] = udfald;
@@ -41,7 +42,7 @@ function kast(){
 			btn.style.backgroundColor = "red"
 		}
 
-		
+	
     	div.appendChild(print);
     	div.appendChild(btn)
 		div.appendChild(br);
@@ -62,12 +63,28 @@ document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'reset' ) ){
 		document.getElementById("kastterning").disabled = false;
 		rolls = 0; 
+		document.getElementById("terning").innerHTML = '<p>0</p>' + '<p>0</p>' + '<p>0</p>' + '<p>0</p>' + '<p>0</p>' ;
+		locked = [false,false,false,false,false];
+		let a = document.getElementsByClassName('btn');
+		for(let i = 0; i < 5; i++) {
+			a[i].style.backgroundColor = 'white';
+		}	
 		
 	} 
 }) 
 
 document.addEventListener('click', function(event){
-	if (event.target.classList.contains( 'enere' ) ){
+	if (magic[6] >= 2){
+		let numberOf = [];
+    	let number = 1;
+    	let whereIsNumber = arr1.indexOf(number);
+    	while (whereIsNumber != -1) {
+        numberOf.push(whereIsNumber);
+        whereIsNumber = arr1.indexOf(number, whereIsNumber + 1);
+    }
+    console.log(numberOf);
+    console.log(arr1.includes(1));
+		
 		console.log("enere")
 	} 
 }) 
