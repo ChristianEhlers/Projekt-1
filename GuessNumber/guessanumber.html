@@ -13,12 +13,14 @@
     <p>Gæt det korrekte nummer mellem 1 og 1000 på under 10 forsøg</p>
 
     <div class="form">
+        <label for="name">Tilføj et navn: </label>
+        <input type="text" id="name" name="nameHighscore">
         <label for="guessField">Tilføj et gæt: </label>
-        <input type="text" id="guessField" class="guessField" required>
-        <input type="submit" value="Submit guess" class="guessSubmit">
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit" id="submit">
     </div>
 
-    <div class="resultParas">
+    <div class="resultParagraph">
         <p class="guesses"></p>
         <p class="lastResult"></p>
         <p class="lowOrHi"></p>

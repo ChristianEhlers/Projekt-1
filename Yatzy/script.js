@@ -1,6 +1,6 @@
 //Array to store dice numbers
 let dice = [1, 2, 3, 4, 5, 6];
-let magic = [0,1,1,1,1,1,0];
+let magic = [0,0,0,0,0,0,0];
 let potscore = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 //arrays to store "eyes" of rolled dices and for checkboxes
