@@ -68,6 +68,8 @@ function kast(){
 		potscore[14] = yatzy();
 	}
 	console.log(locked);
+	console.log(potscore[0])
+	console.log(pair())
 }
 
 function terning(){
@@ -75,23 +77,53 @@ function terning(){
     dice = Math.floor(dice * 6 + 1);
     return dice;
 }
+// prints result of 1 par in table 
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'par1' ) ){
+		var tdg = document.getElementById("par1");
+		var tt = document.createTextNode(pair());
+		tdg.appendChild(tt);
+		console.log("1 par")
+	} 
+})
+// prints result of 3 ens in table 
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'ens3' ) ){
+		var tde = document.getElementById("ens3");
+		var tt = document.createTextNode(threeSame());
+		tde.appendChild(tt);
+		console.log("3 ens")
+	} 
+})
+// prints result of 4 ens in table 
+
+document.addEventListener('click', function(event){
+	if (event.target.classList.contains( 'ens4' ) ){
+		var tde = document.getElementById("ens4");
+		var tt = document.createTextNode(fourSame());
+		tde.appendChild(tt);
+		console.log("4 ens")
+	} 
+})
 
 // reset dices when clicking on a points field.
+
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'reset' ) ){
 		document.getElementById("kastterning").disabled = false;
 		rolls = 0; 
 		document.getElementById("terning").innerHTML = '<p>0</p>' + '<p>0</p>' + '<p>0</p>' + '<p>0</p>' + '<p>0</p>' ;
 		locked = [false,false,false,false,false];
+		magic = [0,0,0,0,0,0,0];
 		let a = document.getElementsByClassName('btn');
 		for(let i = 0; i < 5; i++) {
 			a[i].style.backgroundColor = 'white';
-		}	
+		}
+		
 	} 
 })
 
 // calculate scores in the bottom half of the Yatzy board
-
 // calculate pairs
 function pair() {
 	for (let i = magic.length -1; i >= 0; i--) {
@@ -126,7 +158,9 @@ function fourSame() {
 function smallStraight() {
 	for (let i = magic.length -1; i >= 0; i--) {
 		if (magic[1] == 1 && magic[2] == 1 && magic[3] == 1 && magic[4] == 1 && magic[5] == 1) {
+			 
 			return 15;
+			 
 		}
 	}
 }
@@ -163,18 +197,27 @@ function yatzy() {
 //eventListeners on possible fields to add points 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'enere' ) ){
+		var tde = document.getElementById("enere");
+		var tt = document.createTextNode(potscore[0]);
+		tde.appendChild(tt);
 		console.log("enere")
 	}
 }) 
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'toere' ) ){
+		var tde = document.getElementById("toere");
+		var tt = document.createTextNode(potscore[1]);
+		tde.appendChild(tt);
 		console.log("toere")
 	} 
 })
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'treere' ) ){
+		var tde = document.getElementById("treere");
+		var tt = document.createTextNode(potscore[2]);
+		tde.appendChild(tt);
 		console.log("treere")
 	} 
 })
@@ -182,27 +225,32 @@ document.addEventListener('click', function(event){
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'fireere' ) ){
+		var tde = document.getElementById("fireere");
+		var tt = document.createTextNode(potscore[3]);
+		tde.appendChild(tt);
 		console.log("fireere")
 	} 
 })
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'femere' ) ){
+		var tde = document.getElementById("femere");
+		var tt = document.createTextNode(potscore[4]);
+		tde.appendChild(tt);
 		console.log("femere")
 	} 
 })
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'seksere' ) ){
+		var tde = document.getElementById("seksere");
+		var tt = document.createTextNode(potscore[5]);
+		tde.appendChild(tt);
 		console.log("seksere")
 	} 
 })
 
-document.addEventListener('click', function(event){
-	if (event.target.classList.contains( 'par1' ) ){
-		console.log("1 par")
-	} 
-})
+
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'par2' ) ){
@@ -210,29 +258,24 @@ document.addEventListener('click', function(event){
 	} 
 })
 
-document.addEventListener('click', function(event){
-	if (event.target.classList.contains( 'ens3' ) ){
-		console.log("3 ens")
-	} 
-})
 
-document.addEventListener('click', function(event){
-	if (event.target.classList.contains( 'ens4' ) ){
-		console.log("4 ens")
-	} 
-})
 
-document.addEventListener('click', function(event){
-	if (event.target.classList.contains( 'lille' ) ){
+
+
+document.addEventListener('click', function(event2){
+	if (event2.target.classList.contains( 'lille' ) ){
 		var divl = document.getElementById("lille");
-		var tt = document.createTextNode(smallStraight());
-		divl.appendChild(tt);
-		console.log("lille straight")
+		var tt2 = document.createTextNode(smallStraight());
+		divl.appendChild(tt2);
+		console.log(potscore[10])
 	} 
 })
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'stor' ) ){
+		var divl = document.getElementById("stor");
+		var tt2 = document.createTextNode(bigStraight());
+		divl.appendChild(tt2);
 		console.log("stor straight")
 	} 
 })
@@ -254,3 +297,4 @@ document.addEventListener('click', function(event){
 		console.log("yatzy")
 	} 
 })
+
