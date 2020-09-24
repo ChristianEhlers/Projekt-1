@@ -59,6 +59,7 @@ function terning(){
     return dice;
 }
 
+// reset dices when clicking on a points field.
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'reset' ) ){
 		document.getElementById("kastterning").disabled = false;
@@ -69,24 +70,25 @@ document.addEventListener('click', function(event){
 		for(let i = 0; i < 5; i++) {
 			a[i].style.backgroundColor = 'white';
 		}	
-		
 	} 
 }) 
 
+// calculate ones to sixes
+
+function pair() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[i] >= 2) {
+			
+		}
+	}
+} 
+
+
+//evenListeners on possible fields to add points 
 document.addEventListener('click', function(event){
-	if (magic[6] >= 2){
-		let numberOf = [];
-    	let number = 1;
-    	let whereIsNumber = arr1.indexOf(number);
-    	while (whereIsNumber != -1) {
-        numberOf.push(whereIsNumber);
-        whereIsNumber = arr1.indexOf(number, whereIsNumber + 1);
-    }
-    console.log(numberOf);
-    console.log(arr1.includes(1));
-		
+	if (event.target.classList.contains( 'enere' ) ){
 		console.log("enere")
-	} 
+	}
 }) 
 
 document.addEventListener('click', function(event){
