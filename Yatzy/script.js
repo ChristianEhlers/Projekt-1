@@ -1,6 +1,8 @@
 //Array to store dice numbers
 let dice = [1, 2, 3, 4, 5, 6];
-let magic = [0,0,0,0,0,0,0];
+let magic = [0,1,1,1,1,1,0];
+let potscore = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
 //arrays to store "eyes" of rolled dices and for checkboxes
 arr1 = [0,0,0,0,0];
 locked = [false,false,false,false,false];
@@ -46,11 +48,26 @@ function kast(){
     	div.appendChild(print);
     	div.appendChild(btn)
 		div.appendChild(br);
-		
+
+		// her anbringes kastet i scoreformet array - udregningen
+		potscore[0] = magic[1] * 1;
+		potscore[1] = magic[2] * 2;
+		potscore[2] = magic[3] * 3;
+		potscore[3] = magic[4] * 4;
+		potscore[4] = magic[5] * 5;
+		potscore[5] = magic[6] * 6;	// antal point fra 6'ere
+	
+		potscore[6] = pair();
+		potscore[7] = twoPairs();
+		potscore[8] = threeSame();
+		potscore[9] = fourSame();
+		potscore[10] = smallStraight();
+		potscore[11] = bigStraight();
+		potscore[12] = house();
+		potscore[13] = chance();
+		potscore[14] = yatzy();
 	}
 	console.log(locked);
-	
-
 }
 
 function terning(){
@@ -71,20 +88,79 @@ document.addEventListener('click', function(event){
 			a[i].style.backgroundColor = 'white';
 		}	
 	} 
-}) 
+})
 
-// calculate ones to sixes
+// calculate scores in the bottom half of the Yatzy board
 
+// calculate pairs
 function pair() {
 	for (let i = magic.length -1; i >= 0; i--) {
 		if (magic[i] >= 2) {
-			
+			return i * 2;
 		}
 	}
-} 
+}
+
+function twoPairs() {
+	for (let i = magic.length -1; i >= 0; i--) {
+
+	}
+}
+
+function threeSame() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[i] >= 3) {
+			return i * 3;
+		}
+	}
+}
+
+function fourSame() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[i] >= 4) {
+			return i * 4;
+		}
+	}
+}
+
+function smallStraight() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[1] == 1 && magic[2] == 1 && magic[3] == 1 && magic[4] == 1 && magic[5] == 1) {
+			return 15;
+		}
+	}
+}
+
+function bigStraight() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[2] == 1 && magic[3] == 1 && magic[4] == 1 && magic[5] == 1 && magic[6] == 1) {
+			return 20;
+		}
+	}
+}
+
+function house() {
+
+}
+
+function chance() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[i] >= 1) {
+			return i * 6;
+		}
+	}
+}
+
+function yatzy() {
+	for (let i = magic.length -1; i >= 0; i--) {
+		if (magic[i] >= 5) {
+			return i * 5;
+		}
+	}
+}
 
 
-//evenListeners on possible fields to add points 
+//eventListeners on possible fields to add points 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'enere' ) ){
 		console.log("enere")
@@ -148,6 +224,9 @@ document.addEventListener('click', function(event){
 
 document.addEventListener('click', function(event){
 	if (event.target.classList.contains( 'lille' ) ){
+		var divl = document.getElementById("lille");
+		var tt = document.createTextNode(smallStraight());
+		divl.appendChild(tt);
 		console.log("lille straight")
 	} 
 })
