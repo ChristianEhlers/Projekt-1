@@ -4,53 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="hangman.js"></script>
-    <title>Document</title>
+    <title>Hangman</title>
 </head>
 <body>
     <h1>Hangman<br>
         Your favorite classroom pastime returns!</h1>
-      <p id="ratefeld"></p>
-      <form name="rateformular">
-      <input name="ratezeichen" type="text" size="5" maxlength="1">
-      <input name="ratebutton" type="button" value="Guess" onClick="pruefeZeichen()">
+      <p id="word"></p>
+      <form name="gameInterface">
+      <input name="guessField" type="text" size="5" maxlength="1">
+      <input name="guessButton" type="button" value="Guess" onClick="checkLetter()">
       
-      <p id="gerateneBuchstaben">Wrong Letters:</p>
+      <p id="wrongLetter">Wrong Letters:</p>
       
       <input name="refresh" type="button" value="New Game" onClick="location.reload()">
       </form>
-
-
-
-
-      <div id="terning1" class="terning">0</div>
-	<input type="checkbox">
-	
-	<div id="terning2" class="terning">0</div>
-	<input type="checkbox">
-	
-	<div id="terning3" class="terning">0</div>
-	<input type="checkbox">
-	
-	<div id="terning4" class="terning">0</div>
-	<input type="checkbox">
-	
-	<div id="terning5" class="terning">0</div>
-	<input type="checkbox">
-	
-	<div id="terning"></div>
-	
-    <button onclick="kast()">Kast terningerne</button>
-    
-    <header>
-        <nav>
-          <a href="#" data-target="section-1" class="btn-scroll-into">Section 1</a>
-          <a href="#" data-target="section-2" class="btn-scroll-into">Section 2</a>
-          <a href="#" id="btn-section-3" data-target="section-3">Section 3</a>
-          <a href="#" data-target="section-4" class="more-class">Section 4</a>
-          <a href="#" data-target="section-5" class="more-class">Section 5</a>
-        </nav>
-      </header>
-     
-     
 </body>
 </html>
